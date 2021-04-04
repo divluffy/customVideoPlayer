@@ -1,0 +1,308 @@
+
+/* by Ibrahim jomaa
+
+github: @divluffy
+Facebook: @divluffy
+twitter: @divluffy
+linkedin: @divluffy
+instagram: @divluffy
+
+*/
+
+*{
+margin: 0;
+padding: 0;
+font-family: sans-serif ;
+box-sizing: border-box;
+}
+
+body{
+width: 100%;
+height: 100vh;
+display: flex;
+justify-content: center; 
+align-items: center;
+background: radial-gradient(rgb(6, 85, 6),rgba(2, 80, 80, 0.411));
+}
+
+/* start header */
+header{
+position: absolute;
+top: 20px;
+}
+
+header label{
+padding:10px 25px ;
+cursor: pointer;
+outline: none;
+border: none;
+border-radius: 5px;
+background-color: rgb(218, 124, 124);
+color: rgb(219, 213, 213);
+font-size: 15px;
+}
+
+header input{
+display: none;
+}
+
+header input:hover{
+background-color: rgb(202, 112, 112);
+}
+
+/* start main */
+main{
+width: 100%;
+max-width: 800px;
+}
+
+.player{
+display: flex;
+position: relative;
+overflow: hidden;
+}
+
+.player video{
+width: 100%;
+}
+
+.player .controls{
+display: flex;
+position: absolute;
+bottom: 0;
+background: rgba(0, 0, 0, 0.6);
+width: 100%;
+height: 40px;
+align-items: center;
+transform: translateY(50px);
+transition:transform 0.3s;
+}
+
+.player:hover .controls{
+transform: translateY(0px);
+}
+
+.controls .btns{
+display: flex;
+}
+
+/* play and puase active */
+.controls .play-pause{
+background: none;
+border: none;
+cursor: pointer;
+outline: none;
+}
+
+.play-pause svg{
+width: 35px;
+height: 35px;
+}
+
+.play-pause .pause{
+display: inline;
+}
+
+.play-pause.active .pause{
+display: none;
+}
+
+.play-pause .play{
+display: none;
+}
+
+.play-pause.active .play{
+display: inline;
+}
+
+/* next video */
+.btns .next-video {
+cursor: pointer;
+margin-left: 15px;
+}
+
+.btns .next-video svg{
+position: relative;
+top: 7px;
+width: 22px;
+width: 22px;
+}
+
+/* audio btns */
+.btns .audio-stute{
+cursor: pointer;
+margin-left: 17px;
+}
+.btns .audio-stute svg{
+position: relative;
+top: 6px;
+width: 25px;
+width: 25px;
+}
+
+.audio-stute .full-audio{
+display: inline;
+}
+
+.audio-stute .muffled-audio{
+display: none;
+}
+
+.audio-stute.active .full-audio{
+display: none;
+}
+
+.audio-stute.active .muffled-audio{
+display: inline;
+}
+
+/* range control voice */
+.btns .audio-ratio{
+position: relative;
+top:8px;
+left: 5px;
+width: 0;
+transition:width 0.7s ease-in-out;
+overflow: hidden
+}
+
+.controls:hover .btns .audio-ratio{
+width: 100%;
+}
+
+.audio-ratio.active{
+display: none;
+}
+
+.audio-ratio input{
+-webkit-appearance: none;
+outline: none;
+border: none;
+background: #fff;
+width: 90px;
+height: 5px;
+cursor: pointer;
+}
+
+.audio-ratio input::-webkit-slider-thumb{
+-webkit-appearance: none;
+background: #fff;
+height: 15px;
+width: 15px;
+border-radius: 50%;
+user-select: none;
+}
+
+/* btns right*/
+.controls .btns-right{
+position: absolute;
+display: flex;
+right: 0px;
+padding-inline-end: 5px;
+height: 100%;
+align-items: center;
+}
+
+.btns-right div{
+margin-right: 15px;
+cursor: pointer;
+}
+
+.btns-right .setting svg{
+transform: rotate(0deg);
+transition:transform  700ms;
+}
+.btns-right .setting svg:hover{
+transform: rotate(60deg);
+}
+
+/* screen display */
+.v-zoom .on{
+display: inline;
+}
+
+.v-zoom .off{
+display: none;
+}
+
+.v-zoom.active .on{
+display: none;
+}
+
+.v-zoom.active .off{
+display: inline;
+}
+
+/* video progress */
+.controls .v-progress{
+background-color: rgb(210, 223, 223);
+width: 100%;
+height: 5px;
+position: absolute;
+top: -5px;
+display: flex;
+cursor: pointer;
+}
+
+.v-progress .progress{
+background-color: rgb(160, 37, 37);
+width: 0%;
+height: 5px;
+
+}
+
+
+
+/* thime show the video */
+.controls .times-video{
+font-size: 12px;
+margin-left: 15px;
+font-weight: 300;
+display: flex;
+color: #fff;
+}
+
+.times-video span{
+display: flex;
+}
+
+.times-video .marg{
+margin-left: 2px;
+margin-right: 2px;
+}
+
+.times-video .margc{
+margin-left: 5px;
+margin-right: 5px;
+}
+
+/* overlay for if click in inside video pause or play */
+.overlay{
+position: absolute;
+width: 100%;
+height: 100%;
+background-color: none;
+cursor: pointer;
+}
+
+/* download my video */
+.download-video{
+position: absolute;
+width:  40px;
+height: 40px;
+top: -50px;
+right: 10px;
+cursor: pointer; 
+padding: 7px;
+background: rgba(0, 0, 0, 0.6);
+border-radius: 50%;
+transition:top 0.2s ease-in-out;
+}
+
+.player:hover .download-video{
+top: 10px;
+}
+
+.download-video:hover{
+background: rgb(177, 170, 170);
+}
