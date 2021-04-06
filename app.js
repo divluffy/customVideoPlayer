@@ -22,6 +22,7 @@ let times_video =document.querySelector('.times-video')
 let overlay =document.querySelector('.overlay')
 let file =document.querySelector('#choose-file')
 
+
 //for chooce video from user
 file.addEventListener('change', event=>{
     if(event.target.files.length > 0){
@@ -130,8 +131,30 @@ audioRatio.addEventListener('input', ()=>{
 
 })
 
-
 //zoom on or off
+//fullscreen
+let player =document.querySelector('.player')
+let zoomBack =document.querySelector('.zoom-back')
+
 vZoom.addEventListener('click', ()=>{
     vZoom.classList.toggle("active")
+    player.requestFullscreen()
+    
 })
+
+
+zoomBack.addEventListener('click', ()=>{
+    document.exitFullscreen()
+})
+
+
+//double click
+player.addEventListener('dblclick', ()=>{
+    if(document.exitFullscreen()){
+        player.requestFullscreen()
+        vZoom.classList.toggle("active")
+    }
+
+})
+
+

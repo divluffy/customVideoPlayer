@@ -9,6 +9,12 @@ instagram: @divluffy
 
 */
 
+
+
+
+
+
+
 *{
 margin: 0;
 padding: 0;
@@ -81,6 +87,11 @@ transition:transform 0.3s;
 .player:hover .controls{
 transform: translateY(0px);
 }
+
+
+
+
+
 
 .controls .btns{
 display: flex;
